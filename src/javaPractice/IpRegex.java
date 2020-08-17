@@ -5,15 +5,14 @@ import java.util.Scanner;
 
 public class IpRegex {
 	
-	 public static void main(String[] args){
-		 String test= "234";
-	      //  Scanner in = new Scanner(System.in);
-	      //  while(in.hasNext()){
-	        //    String IP = in.next();
-	            //System.out.println(IP.matches(new MyRegex().pattern));
-	       // }
-	        System.out.println(test.matches(new MyRegex().baseIpNumber));
-	    }
+	public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            String IP = in.next();
+            System.out.println(IP.matches(new MyRegex().pattern));
+        }
+
+    }
 	
 
 	static class MyRegex {
@@ -25,7 +24,7 @@ public class IpRegex {
 		
 		//3 digit from 2 + 0-4 + 0-9		2[0,4]\\d
 		//3 digit from 25 + 0-5
-		public String baseIpNumber = "(\\d{1,2}|(0|1)\\d{2}|2[0,4][0-9]|25[0,5])";		
+		String baseIpNumber = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";		
 	    public String pattern = baseIpNumber+"\\."+baseIpNumber+"\\."+baseIpNumber+"\\."+baseIpNumber;
 	}
 

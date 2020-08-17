@@ -3,9 +3,7 @@ package javaPractice;
 public class AnagramsArrays {
 	
 	 static boolean isAnagram(String a, String b) {
-	      boolean result = true;
-	      // A = 65 ASCII, Z = 90 ASCII
-	      //Create two arrays from 0 to 91 and fill it with zero
+	      boolean result = true;	   
 	      int [] arrayA = new int [91]; //Bucket for a
 	      int [] arrayB = new int [91]; // bucket for b
 	      int indexA = 0;
@@ -28,15 +26,13 @@ public class AnagramsArrays {
 	    	  result = false;
 	      }
 	      if (result) {
-	    	  for (int i =0; i<arrayA.length; i++) {
+	    	  for (int i = 0; i<arrayA.length; i++) {
 	    		  if (arrayA[i]!=arrayB[i]) {
 	    			  result = false;
 	    			  break;
 	    		  }
 	    	  }
-	      }   
-	      
-	      
+	      } 
 	      return result;
 	    }
 
