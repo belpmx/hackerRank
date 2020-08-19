@@ -22,21 +22,26 @@ public class StackParentheses {
 					openChar.push(input.charAt(i));				
 				}
 				else{
+					if (openChar.isEmpty()) {
+						isValid =false;
+					} else
+					{
+						if (input.charAt(i)==')') 
+							if (!(openChar.pop() == '(')) {
+								isValid =false;
+							}
+						
+						if (input.charAt(i)==']') 
+							if (!(openChar.pop() == '[')) {
+								isValid =false;
+							}
+						
+						if (input.charAt(i)=='}') 
+							if (!(openChar.pop() == '{')) {
+								isValid =false;
+							}
+					}
 					
-					if (input.charAt(i)==')') 
-						if (!(openChar.pop() == '(')) {
-							isValid =false;
-						}
-					
-					if (input.charAt(i)==']') 
-						if (!(openChar.pop() == '[')) {
-							isValid =false;
-						}
-					
-					if (input.charAt(i)=='}') 
-						if (!(openChar.pop() == '{')) {
-							isValid =false;
-						}
 				}
 				
 			}
@@ -47,8 +52,7 @@ public class StackParentheses {
 				System.out.println("true");
 			else {
 				System.out.println("false");
-			}
-			
+			}			
 		}
 		
 	}
